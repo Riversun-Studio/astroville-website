@@ -7,6 +7,7 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'string',
+      validation: Rule => Rule.required().error('You forgot to fill your name XD')
     },
     {
       name: 'slug',
@@ -16,6 +17,7 @@ export default {
         source: 'name',
         maxLength: 96,
       },
+      validation: Rule => Rule.required().error('You need to create a Slug, click Generate button')
     },
     {
       name: 'image',
@@ -24,19 +26,27 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: Rule => Rule.required().warning(`Don't be shy, show how awesome you are!`)
     },
     {
       name: 'bio',
       title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
+      type: 'string',
+    },
+    {
+      name: 'twitter',
+      title: 'Twitter Link',
+      type: 'string',
+    },
+    {
+      name: 'instagram',
+      title: 'Instagram Link',
+      type: 'string',
+    },
+    {
+      name: 'linkedin',
+      title: 'Linkedin Link',
+      type: 'string',
     },
   ],
   preview: {
